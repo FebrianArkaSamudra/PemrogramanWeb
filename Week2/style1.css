@@ -3,11 +3,12 @@ html, body {
     padding: 0;
 }
 
-.body {
+body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #ddd;
+    background-color: bisque;
     line-height: 1.65;
     padding-bottom: 1000px;
+    
 }
 
 .container-satu {
@@ -17,4 +18,16 @@ html, body {
     padding: 20px;
     box-sizing: border-box;
     display: flex;
+}
+
+.kolom-utama{
+    order: 2;
+}
+
+.sidebar-satu{
+    order: 1;
+}
+
+.sidebar-dua{
+    order: 3;
 }
