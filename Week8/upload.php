@@ -1,6 +1,6 @@
 <?php
 if (isset($_POST["submit"])) {
-    $targetdir = "image1.jpg";
+    $targetdir = "Uploads/";
     $targetfile = $targetdir . basename($_FILES["myfile"]["name"]);
     $filetype = strtolower(pathinfo($targetfile, PATHINFO_EXTENSION));
 
