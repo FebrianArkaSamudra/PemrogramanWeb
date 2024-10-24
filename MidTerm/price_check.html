@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABC Hotel - Price Check</title>
+    <link rel="stylesheet" href="price_check.css">
+</head>
+<body>
+
+    <div class="header">
+        <h1>Samudra Hotel</h1>
+        <nav>
+            <ul>
+                <li><a href="Homepage.php">Home</a></li>
+                <li><a href="price_check.html">Check Price</a></li>
+                <li><a href="Login.html">Logout</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="container">
+        <h2>Price Check</h2>
+        <form id="priceCheckForm">
+            <label for="roomType">Room Type</label>
+            <select id="roomType" name="roomType">
+                <option value="5000">Standard - IDR 5000</option>
+                <option value="6000">Superior - IDR 6000</option>
+                <option value="7000">Deluxe - IDR 7000</option>
+            </select>
+
+            <label for="floor">Floor</label>
+            <input type="number" id="floor" name="floor" min="1" value="1" required>
+
+            <label for="stayLength">Length of Stay (days)</label>
+            <input type="number" id="stayLength" name="stayLength" min="1" value="1" required>
+
+            <label for="discount">Discount</label>
+            <select id="discount" name="discount">
+                <option value="none">None</option>
+                <option value="member">Member (10% Discount)</option>
+                <option value="birthday">Birthday Promo (IDR 500 Discount)</option>
+            </select>
+
+            <button type="button" onclick="calculatePrice()">CHECK</button>
+
+            <div class="result" id="result"></div>
+        </form>
+    </div>
+
+    <script>
+        function calculatePrice() {
+            let roomTypePrice = parseInt(document.getElementById("roomType").value);
+            let floor = parseInt(document.getElementById("floor").value);
+            let stayLength = parseInt(document.getElementById("stayLength").value);
+            let discountType = document.getElementById("discount").value;
+
+            let rentalPrice = roomTypePrice * stayLength;
+
+            let additionalFee = 0;
+            if (floor > 5) {
+                additionalFee = 1000;
+            }
+
+            let totalPrice = rentalPrice + additionalFee;
+
+            if (discountType === "member") {
+                totalPrice *= 0.9;  
+            } else if (discountType === "birthday") {
+                totalPrice -= 500;  
+            }
+
+            document.getElementById("result").textContent = "Total Price: IDR " + totalPrice.toFixed(0);
+        }
+    </script>
+
+</body>
+</html>
