@@ -6,7 +6,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = trim($_POST['password']);
     $errors = [];
 
-    // Validation
     if (empty($username) || empty($password)) {
         $errors[] = "Must be filled";
     }
@@ -17,7 +16,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $errors[] = "Password must consist of letters and numbers.";
     }
 
-    // Check credentials
     if (empty($errors)) {
         if ($username === "arka" && $password === "arka123") {
             $_SESSION['username'] = $username;
@@ -29,9 +27,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 
-    // Store errors in session and redirect back to login page
     if (!empty($errors)) {
-        $_SESSION['errors'] = $errors; // Store errors in session
+        $_SESSION['errors'] = $errors;
         header("Location: Login.html");
         exit();
     }

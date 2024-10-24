@@ -32,7 +32,7 @@ nav ul {
 }
 
 nav ul li {
-    margin: 0 15px;  /* Reduced spacing to make it more compact */
+    margin: 0 15px;  
 }
 
 nav ul li a {
@@ -40,14 +40,14 @@ nav ul li a {
     text-decoration: none;
     font-weight: bold;
     font-family: 'Georgia', serif;
-    padding: 10px 15px;  /* Added padding to increase clickable area */
-    transition: color 0.3s ease, background-color 0.3s ease;  /* Smooth hover effect */
+    padding: 10px 15px;  
+    transition: color 0.3s ease, background-color 0.3s ease;  
     border-radius: 5px;
 }
 
 nav ul li a:hover {
     color: #bba007; 
-    background-color: rgba(255, 255, 255, 0.1);  /* Subtle background color on hover */
+    background-color: rgba(255, 255, 255, 0.1);  
 }
 
 .container {
