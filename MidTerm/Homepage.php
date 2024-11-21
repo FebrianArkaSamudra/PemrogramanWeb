@@ -1,3 +1,11 @@
+<?php
+session_start();
+if (!isset($_SESSION['username'])) {
+    // Jika belum login, arahkan kembali ke halaman login
+    header('Location: login.php');
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +16,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
+
     <div class="header">
         <div class="container">
             <h1>Samudra Hotel</h1>
@@ -15,7 +24,7 @@
                 <ul>
                 <li><a href="Homepage.php">Home</a></li>
                 <li><a href="price_check.html">Check Price</a></li>
-                <li><a href="Login.html">Logout</a></li>
+                <li><a href="Logout.php">Logout</a></li>
                 </ul>
             </nav>
         </div>

@@ -49,7 +49,7 @@
                 <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
             </form>
 
-            <a class="btn btn-secondary mt-2" herf="index.php">Kembali</a>
+            <a class="btn btn-secondary mt-2" herf="index2.php">Kembali</a>
         </div>
 
         <script src="https://code.jguery.com/jguery-3.5.1.slim.min.js"></script>
